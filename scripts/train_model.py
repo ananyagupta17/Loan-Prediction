@@ -1,3 +1,8 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+
 import os
 import pandas as pd
 import pickle 
@@ -40,13 +45,13 @@ def main():
     y_pred = (y_proba >= cat_thresh).astype(int)
 
     # Print classification metrics
-    print("📊 Classification Report:\n")
+    print("Classification Report:\n")
     print(classification_report(y_test, y_pred))
 
    
     # Save model
     with open("models/catboost_model.pkl", "wb") as f:
-    pickle.dump(model, f)
+        pickle.dump(model, f)
 
     print(" Model saved to 'models/catboost_model.pkl'")
 

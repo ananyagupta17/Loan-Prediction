@@ -53,6 +53,14 @@ def preprocess_data(df):
     )
     df['LoanAmount_Bin'] = df['LoanAmount_Bin'].astype(float).fillna(-1).astype(int)
 
+    # Add missing one-hot columns if needed
+    expected_area_cols = [
+        'Property_Area_Rural', 'Property_Area_Semiurban', 'Property_Area_Urban'
+    ]
+    for col in expected_area_cols:
+        if col not in df.columns:
+            df[col] = 0
+
     # Drop now-unnecessary columns
     df.drop(['ApplicantIncome', 'CoapplicantIncome', 'LoanAmount', 'Total_Income'], axis=1, inplace=True)
 
