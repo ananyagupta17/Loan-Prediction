@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Loan Approval Predictor</title>
+</head>
+<body>
+  <h2>Loan Form</h2>
+  <form action="/predict" method="post">
+    Gender: <select name="Gender">
+      <option>Male</option><option>Female</option>
+    </select><br>
+
+    Married: <select name="Married">
+      <option>Yes</option><option>No</option>
+    </select><br>
+
+    Dependents: <select name="Dependents">
+      <option>0</option><option>1</option><option>2</option><option>3+</option>
+    </select><br>
+
+    Education: <select name="Education">
+      <option>Graduate</option><option>Not Graduate</option>
+    </select><br>
+
+    Self Employed: <select name="Self_Employed">
+      <option>Yes</option><option>No</option>
+    </select><br>
+
+    Applicant Income: <input type="number" name="ApplicantIncome"><br>
+    Coapplicant Income: <input type="number" name="CoapplicantIncome"><br>
+    Loan Amount: <input type="number" name="LoanAmount"><br>
+    Loan Term: <input type="number" name="Loan_Amount_Term"><br>
+    Credit History: <select name="Credit_History">
+      <option value="1.0">Yes</option><option value="0.0">No</option>
+    </select><br>
+
+    Property Area: <select name="Property_Area">
+      <option>Urban</option><option>Semiurban</option><option>Rural</option>
+    </select><br><br>
+
+    <input type="submit" value="Predict">
+  </form>
+</body>
+</html>
